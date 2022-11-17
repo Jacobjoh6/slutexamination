@@ -7,7 +7,7 @@ const planets  = document.querySelectorAll(`aside`);
 const article  = document.querySelector(`article`);
 const btn      = document.querySelector(`button`);
 let template   = ``;
-
+btn.classList.add(`hide`); //gömmer knappen tills man klickar på en planet
 
 async function getKey() {
     const response = await fetch(`${BASE_URL}/keys`, { method: 'POST' });
@@ -22,7 +22,7 @@ async function getPlanets() {
         }
     });
 
-    btn.classList.add(`hide`); //gömmer knappen tills man klickar på en planet
+
 
     const data = await response.json();
     console.log(data);
